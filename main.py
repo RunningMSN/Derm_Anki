@@ -45,7 +45,8 @@ for subdir, image_file in images:
 for image in images:
     card_note = genanki.Note(
         model=my_model,
-        fields=['<img src="' + image[1] + '">', image[0]])
+        fields=['<img src="' + image[1] + '">', image[0]],
+        tags=['Derm::' + image[0].replace(' ', '_')])
     deck.add_note(card_note)
     derm_package.media_files.append(image[1])
 
